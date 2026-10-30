@@ -277,18 +277,18 @@ draw forwards onto the screen.
 /* @keyframes is a CSS at-rule.
 fade-up is the animation's name.
 from and to are keyframe selectors. 
-This ruleset animates the Fade-Up Entrance. The lightning bolt (polygon) moves in from the top right 
+This ruleset animates the Fade-Up Entrance. The lightning bolt (polygon) moves in from the top 
 of the viewbox while fading from transparent to fully opaque.
 */
 @keyframes fade-up {     /* draw animation */ /* triggered on page load */ 
     from {               /* animation start frame */  
         opacity: 0;      /* sets the polygon's start opacity */   
-        transform: translateX(20px) translateY(-24px);  /* sets the shape's inital position in the viewbox */ 
+        transform: translateY(30px);  /* sets the shape's inital position in the viewbox */ 
     }
 
-    to {                                         /* animation end frame */ 
-        opacity: 1;                              /* makes the shape opaque */ 
-        transform: translateX(0) translateY(0);  /* sets the shape's final position in the viewbox */ 
+    to {                           /* animation end frame */ 
+        opacity: 1;                /* makes the shape opaque */ 
+        transform: translateY(0);  /* sets the shape's final position in the viewbox */ 
     }
 }
 
@@ -301,7 +301,7 @@ starts after a 0.5 second delay, and eases out.
     width: 100px;           /* sets container width */
     height: 100px;          /* sets container height */
     transform-origin: top;  /* sets the transformation's origin point (top) */
-    animation: fade-up 1s ease-out 0.5s both; /* calls the fade-up animation, sets its duration, and adds an ease-out */
+    animation: fade-up 0.5s ease-out 0.5s both; /* calls the fade-up animation, sets its duration, and adds an ease-out */
 }
 
 
