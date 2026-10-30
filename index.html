@@ -1,0 +1,163 @@
+<!--
+GitHub repo URL — https://github.com/kyockers/yockers-svg-animation
+Live web URL — https://kyockers.github.io/yockers-svg-animation
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<!-- 
+The <head> element contains information used by the browser.
+This section sets character encoding, sets display and device width, adds a page title, and links to 
+the external Google font and CSS stylesheet.
+<meta charset="UTF-8">                              Sets character encoding for the page.
+<meta name="viewport">                              Sets device width for media queries.
+<title>...</title>                                  Adds the webpage's title.
+<link rel="preconnect">...<rel="stylesheet">        Connects to Google's font server and loads linked fonts.
+<link rel="stylesheet" href="css/tempstyle.css">    Links to the external CSS stylesheet.
+-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kim Yockers — SVG Animation Showcase</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Momo+Trust+Display&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<!-- 
+The <body> element holds the webpage's visible content.
+The <header> element holds the page header.
+The <h1> element contains the page's title.
+This section creates containers to hold the <body>, <header>, and <h1> elements. 
+<body>    Creates a container for the page's visible content.
+<header>  Creates a container for the header section.
+<h1>      Creates the page title. 
+-->
+<body>
+    <header>
+        <h1>SVG Animation Showcase!</h1>
+    </header>
+
+<!--
+The <main> element holds the Animation Showcase gallery.
+Each <section> element holds a gallery card.
+Each <h2> element contains a card's title.
+Each <svg> element holds an animation's custom shapes and hover text.
+Each <title> element contain a descriptive name for the SVG (aria label for screen readers).
+Each <p> element contains visible text.
+Each <code> element holds a grouped segment of text.
+This section creates containers to hold the Animation Showcase and its contents.
+<main>...</main>         Creates a container for the gallery.
+<section>...</section>   Creates a container for a gallery card.
+</h2>...</h2>            Creates the section's title.
+<svg>...</svg>           Creates a container for the svg shape,
+<class="...">            Assigns a style class to the svg shape,        
+<viewBox="...">          Sets the viewbox's coordinate bounds.
+<role="img">             Designates the svg shape as an image,
+<aria-labelledby="...">  Links to the svg shape's hover text.   
+<title id="...">         Creates the hover text for the svg shape and assigns it an ID.
+<p>...</p>               Creates a text container.
+</code>...</code>        Groups a segment of text.
+-->
+    <main>
+<!--
+This <section> holds the Hover Transition Animation elements.
+The <polygon> element contains the lightning bolt shape.
+This section creates a polygon shape (lightning bolt) and places it in the viewbox.
+<polygon points="..." />  Creates a lightning bolt using 8 sets of xy coordinates.
+-->
+        <section>
+            <h2>1. Hover Transition</h2>
+            <svg class="hover-icon" viewBox="0 0 165 300" role="img" aria-labelledby="hover-title">
+                <title id="hover-title">A hot pint lightning bolt that turns bright yellow on hover</title>
+                <polygon points="0,300 50,130 4,130 55,0 165,0 116,85 157,85 0,300" />
+            </svg>
+            <p> Uses <code>transform: scale()</code> and <code>fill:</code> to transition color and 
+                scale on hover. Uses <code>transition: transform ease</code> and <code>transition: 
+                fill ease</code> to make the transitions smoothe.  
+            </p>
+        </section>
+<!--
+This <section> contains the Spinner Loader Animation elements.
+The <circle> element contains the spinner shape.
+This section creates a circle shape (spinner), places it in the viewbox, and gives it a 20px radius. 
+<circle.../>        Creates a circle,
+<cx="25" cy="25">   Sets the circle's center coordinates in the viewbox,
+<r="20">            Sets the circle's radius.
+-->
+        <section>
+            <h2>2. Spinning Loader</h2>
+            <svg class="spinner" viewBox="0 0 50 50" role="img" aria-labelledby="spin-title">
+                <title id="spin-title">A hot pink loading spinner that rotates infinitely.</title>
+                <circle cx="25" cy="25" r="20" />
+            </svg>
+            <p>Uses <code>stroke-dasharray</code> to make the spinner circle into a partial arc.
+                Uses <code>@keyframes</code> and <code>transform: rotate()</code> to rotate the 
+                spinner once, and <code>animation: linear infinite</code> to make the rotation continuous.
+            </p>
+        </section>
+<!--
+This <section> holds the Self-Drawing Line Animation elements.
+The <polyline> element contains the line shape.
+This section creates a jagged line shape and places it in the viewbox.
+<polyline points="..." />  Creates a jagged line using 9 sets of xy coordinates.
+-->
+        <section>
+            <h2>3. Self-Drawing Line</h2>
+            <svg class="draw-line" viewBox="0 0 300 50" role="img" aria-labelledby="draw-title">
+                <title id="draw-title">A hot pink, jagged line that draws on from the left.</title>
+                <polyline points="30,30 60,10 90,30 120,10 150,30 180,10 210,30 240,10 270,30" />
+            </svg>
+            <p>Uses <code>stroke-dasharray</code> and <code>stroke-dashoffset</code> 
+                in a <code>@keyframe</code> to draw the line at page load, and fills it
+                <code>forwards</code> to keep it visible after animating.
+            </p>
+        </section>
+<!--
+This <section> holds the Fade-up Entrance Animation elements.
+The <polygon> element contains the lightning bolt shape.
+This section creates a polygon shape (lightning bolt) and places it in the viewbox.
+<polygon points="..." />  Creates a lightning bolt using 8 sets of xy coordinates.
+-->
+
+        <section>
+            <h2>4. Fade-up Entrance</h2>
+            <svg class="fade-in" viewBox="0 0 165 300" role="img" aria-labelledby="fade-title">
+                <title id="fade-title">A hot pink ligtning bolt that fades in from the top right.</title>
+                <polygon points="0,300 50,130 4,130 55,0 165,0 116,85 157,85 0,300" />
+            </svg>
+            <p>Uses <code>opacity</code> and <code>transform: translateX() translateY()</code> 
+                in one <code>@keyframe</code> to fade and move the lightning bolt on page load.
+            </p>
+        </section>
+    </main>
+
+<!-- FOOTER -->
+<!--
+The <footer> element contains copyright information.
+The <p> elements contain the copyright and AI disclosure statement.
+This section creates the footer, contact links, and boilerplate <p> text, and assigns them classes. 
+<footer></footer>            Creates the footer container.
+<p class="reflection-text">  Creates a text container and assigns it the class "reflection-text".
+<strong></strong>            Groups a segment of text and makes it bold.
+-->
+    <footer>
+        <p>&copy;2026 Kim Yockers</p>
+    </footer>
+
+    <p class="reflection-text"><strong>Reflection:</strong><br>
+    The self drawing line was <em>by far</em> the hardest to work with. It took me a ton of 
+    trial and error, but I got it working in the end (and I think it turned out pretty good). 
+    I had to look up what the numbers do in stroke-dasharray. It turns out it works just like 
+    Illustrator's custom stroke, so it was pretty easy to make a fun pattern for the spinner.
+    Amazon Prime Video has hover transitions on their watchlist and info icons. Dropbox has an 
+    infinite loading spinner. The Svgator homepage has several cool example a self drawing lines. 
+    The Apple website has a bunch of fade up animations on the Apple Watch product page.
+    </p>
+
+</body>
+</html>

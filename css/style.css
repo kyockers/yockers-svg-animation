@@ -1,0 +1,333 @@
+
+/* =====================================
+===  VARIABLES  ========================
+======================================== */
+/* CSS variables keep styling consistent and easy to update in one place. */
+:root {
+    --candy: #ff008c;           /* hot pink */
+    --grape: #7d02bb;           /* medium purple */
+    --licorice: #15001c;        /* dark grey */
+    --marshmallow: #f5f5f5;     /* neutral off-white */
+    --sunshine: #ffc400;        /* bright yellow */
+
+    --title-font: "Momo Trust Display", sans-serif;  /* rounded, geometric sans-serif font */
+}
+ 
+
+
+/* =====================================
+===  BASE STYLES  ======================
+======================================== */
+
+/* body is an element selector.
+This ruleset styles the container that holds the page's visible content. The page's background is purple, 
+and its maximum width is 1200px, default margins are removed, and the container is horizontally centered.
+Page text is dark grey.
+*/
+body {
+    color: var(--licorice);         /* sets default text color */ 
+    font-family: Arial, Helvetica, sans-serif;  /* sets page's default font */ /* sans-serif stack */
+    background-color: var(--grape); /* sets background color */
+    max-width: 1200px;              /* sets container's maximum width */ /* limits width on wide screens */
+    margin: 0 auto;                 /* horizontally centers content */
+    padding-bottom: 20px;           /* adds space below content */
+}
+
+/* main is an element selector.
+This ruleset styles the Animation Showcase gallery. The gallery has a maximum width of 350px, rounded 
+corners, an off white background, and no margins. Gallery cards are displayed in a grid with a 20px gap 
+between cards, and horizontally centered on the page.
+*/
+main {
+    max-width: 350px;       /* sets container's maximum width */ /* keeps gallery narrow */
+    display: grid;          /* formats content in a grid */
+    margin: 0 auto;         /* horizontally centers content */
+    gap: 20px;              /* adds space between grid items */
+    background-color: var(--marshmallow);  /* sets background color */
+    border-radius: 15px;    /* rounded corners */
+}
+
+/* section is an element selector.
+This ruleset styles the gallery cards. Card content is horizontally centered with 20px of padding. 
+Minimum with for each card is 350px. Default margins are removed, and the cards are horizontally 
+centered.
+*/
+section {
+    width: min(350px, 100%);    /* sets card's minimum width */ /* keeps cards from getting too small on mobile */
+    box-sizing: border-box;     /* padding and border do not add to total width */
+    justify-items: center;      /* horizontally centers card content */
+    padding: 20px;              /* adds padding around content */
+    margin: 0 auto;             /* horizontally centers the card */
+}
+
+/* h1 is an element selector.
+This ruleset styles the page's headline. The font used is Momo Trust Display. Text is blue-white, 
+medium weight, and horizontally centered. Font size, letter spacing, and line height are increased 
+for better legibility. 
+*/
+h1 {
+    color: var(--marshmallow);       /* sets text color */
+    font-family: var(--title-font);  /* sets font */ 
+    font-weight: 400;                /* sets medium font weight */
+    font-style: normal;              /* no italics */
+    font-size: 1.4em;                /* makes text larger than default */
+    text-align: center;              /* horizontally centers text */
+    letter-spacing: 0.1em;           /* slightly widens letter spacing */
+}
+
+/* h2 is an element selector.
+This ruleset styles a card's headline. The font used is Momo Trust Display. Text is dark grey, 
+medium weight, and horizontally centered. Font size and line height are increased. Margins are 
+added to top and bottom.
+*/
+h2 {
+    font-family: var(--title-font);  /* sets font */
+    font-weight: 400;                /* regular font weight */
+    font-style: normal;              /* no italics */
+    font-size: 1.5em;                /* makes text slightly larger than default */
+    text-align: center;              /* horizontally centers text  */
+    margin: 10px 0 5px 0;            /* adds margins above and below */
+}
+
+/* svg is an element selector.
+This ruleset styles an svg animation's viewbox. The viewbox is horizontally centered on the card, 
+and space is added around it.
+*/
+svg {
+    display: block;             /* the viewbox sits on its own line */
+    padding: 20px;              /* adds padding around content */
+}
+
+/* p is an element selector.
+This ruleset styles the page's paragraph text. Text displays in a block with space around it 
+(right, left, bottom). Text is 14pt, dark grey, sans serif stack with slightly increased line height.
+*/
+p {
+    display: block;             /* text sits on its own line */
+    margin: 0 10px 15px 10px;   /* adds margins to sides and bottom */
+    font-size: 14px;            /* sets text size */
+    line-height: 1.3rem;        /* widens spacing between lines to improve text readability */
+}
+
+/* code is an element selector.
+This ruleset styles a card's code snippets. Code text is medium weight and purple.
+*/
+code {
+    color: var(--grape);    /* sets text color */
+    font-weight: 400;       /* sets regular font weight */
+}
+
+/* footer is an element selector.
+This ruleset styles the page's footer. Footer's maximum width is 500px. Default margin is removed and
+the footer is horizontally centered.
+*/
+footer {
+    max-width: 350px;   /* sets maximum width of container */
+    margin: 0 auto;     /* centers content horizontally */
+}
+
+/* footer p is a descendent selector.
+This ruleset styles the footer's paragraph text. Footer text is off white and centered, and has 20px
+vertical margins. 
+*/
+footer p {
+    color: var(--marshmallow);  /* sets text color */
+    text-align: center;         /* centers text horizontally */
+    font-weight: 500;           /* makes text bolder */
+    margin: 20px auto;          /* adds margins above and below */
+}
+
+/* .reflection-text is a class selector.
+This ruleset styles the reflection pargraph. This section has an off white background, rounded corners, 
+and is horizontally centered on the page. Text is dark grey and left aligned, with a maximum line length 
+of 65 characters and 40px of padding.
+*/
+.reflection-text {
+    width: min(350px, 100%);    /* sets card's minimum width */ /* keeps cards from getting too small on mobile */
+    box-sizing: border-box;     /* padding and border do not add to total width */
+    justify-items: center;      /* horizontally centers card content */
+    padding: 30px;              /* adds padding around content */
+    margin: 0 auto;             /* horizontally centers the card */
+    font-size: 12px;
+    background-color: var(--marshmallow); /* sets background color */
+    border-radius: 15px;        /* rounded corners */
+}
+
+
+/* =====================================
+===   Example 1 — Hover Transition   ===
+======================================== */
+
+/* .hover-icon is a class selector.
+This ruleset styles the Hover Transition container. Height and width are both 100px (square). 
+The scale transition will last for 0.3 seconds, and originate from the centerpoint.
+*/
+.hover-icon {
+    width: 100px;              /* sets container width on page load */
+    height: 100px;             /* sets container height on page load */
+    transform-origin: center;  /* sets the transformation's origin point (center) */
+    transition: transform 0.3s ease;  /* calls the transform transition, sets its duration, and adds an ease-in/out */
+}
+
+/* .hover-icon polygon is a desendent selector.
+This ruleset styles the Hover Transition's lightning bolt shape. The shape is hot pink. The color (fill) 
+transition will last for 0.3 seconds and ease in and out.
+*/
+.hover-icon polygon {            
+    fill: var(--candy);          /* sets polygon color on page load (hot pink) */
+    transition: fill 0.3s ease;  /* calls the fill transition, sets its duration, and adds an ease in/out */
+}
+
+/* .hover-icon:hover uses the :hover pseudoclass.
+This ruleset styles the container's hover state. On mouse hover, the container and its contents grow 
+slightly larger.
+*/
+.hover-icon:hover {             /* scale transition */ /* triggered on hover */
+    transform: scale(1.2);      /* container grows 120% */
+} 
+
+/* .hover-icon:hover polygon uses the :hover pseudoclass.
+This ruleset styles the lightning bolt shape's hover state. On mouse hover, the lightning bolt 
+turns yellow.
+*/
+.hover-icon:hover polygon {     /* fill transition */ /* triggered on hover */
+    fill: var(--sunshine);      /* polygon turns yellow on hover */
+}
+
+
+
+/* ======================================
+===    Example 2 — Spinning Loader    ===
+========================================= */
+
+/* @keyframes is a CSS at-rule.
+spin is the animation's name.
+to is a keyframe selector. 
+This ruleset animates the Spinning Loader. The loader shape rotates 360 degrees.
+*/
+@keyframes spin {                   /* spin animation */ /* triggered on page load */
+    to {                            /* animation end frame */
+        transform: rotate(360deg);  /* rotates the loader circle 360 degrees clockwise */
+    }
+}
+
+/* .spinner is a class selector.
+This ruleset styles the Spinning Loader's container and animation. Height and width are 
+both 48px (square). The spin animation lasts for 1 second, and repeats infinitely.
+*/
+.spinner {
+    width: 48px;        /* sets container width */
+    height: 48px;       /* sets container height */
+    animation: spin 1s linear infinite;   /* calls the spin animation, sets its duration and direction, and infinitely loops it */
+}
+
+/* .spinner circle is a desendent selector.
+This ruleset styles the spinner shape (circle). The circle is a 4px wide, hot pink, dashed outline with 
+rounded endpoints and no fill.
+*/
+.spinner circle {
+    stroke: var(--candy);               /* sets circle color */
+    fill: none;                         /* no fill */
+    stroke-width: 4px;                  /* sets outline width */
+    stroke-linecap: round;              /* outline endpoints are rounded */
+    stroke-dasharray: 1 7 1 7 90 20;    /* gives the outline a dash pattern */
+}
+
+
+
+/* ======================================
+===   Example 3 — Self-Drawing Line   ===
+========================================= */
+
+/* @keyframes is a CSS at-rule that defines the .draw animation.
+from and to are keyframe selectors. 
+This ruleset animates the Self-Drawing Line. The line moves in from the left of the viewbox.
+*/
+@keyframes draw {                /* draw animation */ /* triggered on page load */ 
+    from {                       /* animation start frame */ 
+        stroke-dashoffset: 400;  /* sets the polyline's start position */
+    }
+
+    to {                        /* animation end frame */ 
+        stroke-dashoffset: 0;   /* sets the polyline's end position */
+    }
+}
+
+/* .draw-line polyline is a desendent selector.
+This ruleset styles the Self-Drawing Line shape (polyline). The polyline is a 6px wide hot pink jagged 
+line with rounded endpoints and no fill. The line's animation will last for 2 seconds, and 
+draw forwards onto the screen.
+*/
+.draw-line polyline {
+    fill: none;                 /* no fill */
+    stroke: var(--candy);       /* sets outline color */
+    stroke-width: 6px;          /* sets outline width */
+    stroke-linecap: round;      /* line endpoints are rounded */
+    stroke-dasharray: 400;      /* sets the polyline's dash pattern */
+    stroke-dashoffset: 400;     /* offsets dash origin to keep the polyline out of view at page load */
+    animation: draw 2s ease-out forwards;  /* calls the draw animation, sets its duration, and adds an ease-out, and keeps the polyline visible after the animation ends */
+}
+
+
+
+/* =====================================
+===   Example 4 — Fade-Up Entrance   === 
+======================================== */
+
+/* @keyframes is a CSS at-rule.
+fade-up is the animation's name.
+from and to are keyframe selectors. 
+This ruleset animates the Fade-Up Entrance. The lightning bolt (polygon) moves in from the top right 
+of the viewbox while fading from transparent to fully opaque.
+*/
+@keyframes fade-up {     /* draw animation */ /* triggered on page load */ 
+    from {               /* animation start frame */  
+        opacity: 0;      /* sets the polygon's start opacity */   
+        transform: translateX(20px) translateY(-24px);  /* sets the shape's inital position in the viewbox */ 
+    }
+
+    to {                                         /* animation end frame */ 
+        opacity: 1;                              /* makes the shape opaque */ 
+        transform: translateX(0) translateY(0);  /* sets the shape's final position in the viewbox */ 
+    }
+}
+
+/* .fade-in is a class selector.
+This ruleset styles the Fade-In Entrance container. Height and width are both 150px (square).
+The transform origin is set to the top center. The animation lasts for 1 second,
+starts after a 0.5 second delay, and eases out.
+*/
+.fade-in {
+    width: 100px;           /* sets container width */
+    height: 100px;          /* sets container height */
+    transform-origin: top;  /* sets the transformation's origin point (top) */
+    animation: fade-up 1s ease-out 0.5s both; /* calls the fade-up animation, sets its duration, and adds an ease-out */
+}
+
+
+/* .fade-in polygon is a desendent selector.
+This ruleset styles the Fade-Up Entrance lightning bolt shape (polygon). The polygon is hot pink.
+*/
+.fade-in polygon {          
+    fill: var(--candy);  /* sets polygon color */
+}
+
+
+/* =====================================
+===  REDUCED MOTION  =================== 
+======================================== */
+/* 
+@media is a media query. 
+prefers-reduced-motion is a media feature.
+This ruleset disables animations and transitions when a device requests reduced motion. 
+Improves site accessibility. 
+*/
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;    /* decreases animation duration */ /* animations appear invisible */
+        animation-iteration-count: 1 !important;  /* prevents infinite looping */
+        transition-duration: 0.01ms !important;   /* transition durations are reduced */ /* transitions appear invisible */
+    }
+}
